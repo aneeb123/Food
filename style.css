@@ -1,0 +1,139 @@
+:root{
+    --color-primary: linear-gradient(-20deg,#f44a07,#ff8731);
+    --color-dark:#111;
+    --color-light:#ecf0f3;
+    --box-shadow:0 0 5rem rgba(0,0,0,0.1);
+    --btn-box-shadow:0, 1rem, 2rem rgba(0,0,0,0.1);
+}
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: var(--color-primary);
+    user-select: none;
+    overflow: hidden ;
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    color: var(--color-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    
+}
+nav{
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    padding: 2rem 0;
+}
+nav .container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container ul{
+    display: flex;
+    gap: 4rem;
+}
+nav ul a:last-child li{
+    padding: 0.7rem 2rem;
+    border-radius: 2rem;
+    background: var(--color-primary);
+    transition: all .3s ease;
+
+}
+nav ul a:last-child li:hover{
+    box-shadow: var(--btn-box-shadow);
+    
+}
+.content{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.content .container{
+    margin-left: 4rem;
+    width: 46rem;
+    color: var(--color-light);
+}
+.content h1{
+    font-size: 3rem;
+    opacity: 0;
+    animation: animateContent 3s 1s forwards ;
+}
+@keyframes animateContent {
+    to{
+        opacity: 1;
+    }
+}
+.content p{
+    margin-top: 2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    opacity: 0;
+    animation: animateContent 4s 2s forwards ;
+}
+.content a{
+    margin-top: 3rem;
+    padding: 1.5rem 3rem;
+    background-color: var(--color-light);
+    display: inline-block;
+    border-radius: 2rem;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0;
+    animation: animateContent 5s 3s forwards ;
+    
+}
+.dray{
+    width: 70rem;
+    height: 70rem;
+    background: var(--color-light);
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 50%;
+    right: -20rem;
+    transform: translateY(-50%);
+    
+}
+.plate{
+    position: absolute;
+    top: 15rem;
+    left: 10rem;
+    width: 38rem;
+    height: 38rem;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    animation:  animeplate 25s 2s linear forwards infinite;
+}
+@keyframes animeplate{
+    to{
+        transform: rotate(369deg);
+    }
+}
+.plate .food{
+    width: 26rem;
+    height: 26rem;
+    position: absolute;
+    top: 53%;
+    left: 47%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    border-radius: 50%;
+}
+.food img{
+    width: 100%;
+}
